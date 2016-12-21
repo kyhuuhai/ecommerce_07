@@ -20,6 +20,20 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  login_invalid: "Invalid Email/Password"
+  save_change: "Save Change"
+  edit_user: "Edit User"
+  register: "Register"
+  log_in : "Login"
+  error: "Error"
+  name: "Name"
+  email: "Email"
+  not_found: "User's Not Found"
+  the_form_contains: "The form contains"
+  register_sucess : "Register Succeed"
+  new_user: "New User ?"
+  profile_updated : "Profile updated"
+  update_profile: "Update Your Profile"
   layouts:
     application:
       title: "Project 1"
@@ -28,8 +42,6 @@ en:
       account: "Account"
       profile: "Profile"
       setting: "Setting"
-      log_in : "Login"
-      signup : "Sign Up"
     footer:
       namefooter: "The Project of Ky Huu Hai"
       about: "About"
