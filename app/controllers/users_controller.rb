@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, except: [:new, :create]
+  before_action :load_user, except: [:new, :create]
 
   def new
     @user = User.new
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   end
 
   private
-  def set_user
+  def load_user
     @user = User.find_by id: params[:id]
     unless @user
       flash[:danger] = t "user_not_found"

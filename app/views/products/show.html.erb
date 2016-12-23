@@ -1,1 +1,25 @@
 <%= render @product %>
+<div class="col-md-12">
+  <div class="product-widget-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="single-product-widget">
+            <h2 class="product-wid-title"><%= t "topnew" %></h2>
+            <div class="single-wid-product">
+              <%= render "top_product" , object: @top_new_product %>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="single-product-widget">
+            <h2 class="product-wid-title"><%= t "topseller" %></h2>
+            <div class="single-wid-product">
+            <%= render "top_product", object: @top_order_product%>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
