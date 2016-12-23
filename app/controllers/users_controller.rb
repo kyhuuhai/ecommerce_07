@@ -32,15 +32,15 @@ class UsersController < ApplicationController
   end
 
   private
-    def set_user
-      @user = User.find_by id: params[:id]
+  def set_user
+    @user = User.find_by id: params[:id]
     unless @user
-      flash[:danger] = t "not_found"
+      flash[:danger] = t "user_not_found"
       redirect_to root_url
     end
-    end
+  end
 
-    def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
-    end
+  def user_params
+    params.require(:user).permit :name, :email, :password, :password_confirmation
+  end
 end
