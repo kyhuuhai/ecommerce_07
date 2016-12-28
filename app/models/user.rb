@@ -15,4 +15,6 @@ class User < ApplicationRecord
   validates :password, presence: true, length: {minimum: Settings.password_minimum}, allow_nil: true
 
   has_secure_password
+
+  scope :order_by_name, ->{order name: :asc}
 end

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+<h1><%=t ".users" %></h1>
+<%= link_to t("new_user"), new_admin_user_path , class: "btn btn-primary"%>
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th><%=t ".full_name" %></th>
+        <th><%=t ".email" %></th>
+        <th><%=t ".password" %></th>
+        <th colspan="3"><%=t ".options" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @users %>
+    </tbody>
+  </table>
+  <%= will_paginate @users%>
+</div>

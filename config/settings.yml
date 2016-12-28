@@ -3,3 +3,6 @@ email_maximum: 255
 password_minimum: 6
 top_new_product: 3
 top_order: 3
+per_page:
+  admin_users: 10
+  carts: 10

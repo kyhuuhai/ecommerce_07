@@ -1,0 +1,13 @@
+<tr>
+  <td><%= link_to cart.user.email, admin_user_path(cart.user) %></td>
+  <td><%= cart.user.email %></td>
+  <td><%= number_to_currency cart.totalprice %></td>
+  <td><%= cart.cartdetails.size %></td>
+  <td><%= cart.status %></td>
+  <td>
+    <%= link_to t(".detail"), admin_cartdetail_path(cart),
+      class: "btn btn-success" %>
+    <%= link_to t(".empty"), admin_cart_path(cart), method: :delete,
+      data: {confirm: t("confirm")}, class: "btn btn-danger" %>
+  </td>
+</tr>
