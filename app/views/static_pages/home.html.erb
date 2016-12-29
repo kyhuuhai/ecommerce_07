@@ -39,7 +39,9 @@
       </div>
       <div class="col-md-9">
         <div class="row">
-          <%= render "shared/product_form"%>
+          <% @products.each do |product| %>
+            <%= render "shared/product_form", cartdetail: @cartdetails, product: product %>
+          <% end %>
         </div>
       </div>
     </div>

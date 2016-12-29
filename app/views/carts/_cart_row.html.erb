@@ -1,0 +1,30 @@
+<div class="well">
+  <div class="row">
+    <div class="col-xs-8">
+      <h4><%= product.name %></h4>
+    </div>
+    <div class="col-xs-4">
+      <%= form_for cartdetail, remote: true do |c| %>
+        <h4 class="text-right"><%= t ".unit_price" %><span style="color: green">
+          <%= number_to_currency product.price %></span>
+        </h4>
+        <div class="row">
+          <div class="col-xs-4">
+            <%= c.number_field :quantity, value: cartdetail.quantity.to_i,
+             class: "form-control", min: 1 %>
+            <%= c.hidden_field :product_id, value: product.id %>
+          </div>
+          <div class="col-xs-8 text-right">
+            <%= c.submit t(".update_quantity"), class: "btn btn-primary" %>
+            <%= link_to t(".delete"), cartdetail,
+              { data: { confirm: t(".delete_confirm")},
+              method: :delete, remote: true, class: "btn btn-danger"} %>
+          </div>
+        </div>
+        <h4 class="text-right"><%= t ".total_price" %><span style="color: green">
+          <%= number_to_currency cartdetail.total_price %></span>
+        </h4>
+      <% end %>
+    </div>
+  </div>
+</div>

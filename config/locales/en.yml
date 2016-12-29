@@ -48,7 +48,22 @@ en:
   topnew: "Top New"
   topseller: "Top Seller"
   recently_view: "Recently Viewed"
+  require_login: "Please login to order"
+  carts:
+    cart_row:
+      update_quantity: "Update Quantity"
+      delete: "Delete"
+      total_price: "Total Price:"
+      unit_price: "Unit Price: "
+      delete_confirm: "Are you sure you wish to delete
+        the product from your cart?"
+    shopping_cart:
+      cart_empty: " There are no items in your shopping cart.Please"
+      confirm: "Comfirm"
+      confirmed: "Confirmed"
   layouts:
+    cart_text:
+      item_in_cart: "Item in cart"
     application:
       title: "Project 1"
     header:

@@ -1,0 +1,4 @@
+<%= link_to "#{current_cart.cartdetails.size}
+  #{t(".item_in_cart")}
+  ( #{number_to_currency current_cart.subtotal} )",
+  cart_path(current_cart), class: "btn btn-link" %>

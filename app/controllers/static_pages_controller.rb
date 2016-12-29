@@ -3,6 +3,7 @@ class StaticPagesController < ApplicationController
 
   def home
     @categories = Category.all
+    @cartdetails = current_cart.cartdetails.new
   end
 
   private

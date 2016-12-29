@@ -19,6 +19,21 @@
             <div class="product-price"><%= number_to_currency product.price %></div>
             <div class="product-stock"><%= @product.status %></div>
             <hr>
+            <% if logged_in? %>
+              <div class="btn-group cart">
+                <%= form_for @cartdetails, remote: true do |cartdetail| %>
+                <%= cartdetail.hidden_field :product_id, value: @product.id %>
+                <%= cartdetail.submit t "add_cart", class: "btn btn-primary" %>
+              </div>
+              <div class="btn-group wishlist">
+                <button type="button" class="btn btn-danger">
+                  <%= t "add_wishlist" %>
+                </button>
+              </div>
+            <% end %>
+            <% else %>
+              <h3><%= t "require_login"%></h3>
+            <% end %>
             <div class="btn-group cart">
               <button type="button" class="btn btn-success">
                 <%= t "add_cart" %>

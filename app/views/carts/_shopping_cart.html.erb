@@ -1,0 +1,25 @@
+<% if !@cartdetail.nil? && @cartdetail.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+      <% @cartdetail.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+<% if @cartdetails.size == 0 %>
+  <p class="text-center">
+    <%= t("cart_empty") %><%= link_to "go back", root_path %>
+  </p>
+<% else %>
+  <% @cartdetails.each do |cartdetails| %>
+    <%= render "carts/cart_row", product: cartdetails.product, cartdetail: cartdetails %>
+  <% end %>
+<% end %>
+<%= form_for @cart do |f| %>
+  <% if @cart.status.nil? %>
+    <%= f.submit t ".confirm", class: "btn btn-primary" %>
+  <% else %>
+    <%= f.submit t ".confirmed", class: "btn btn-primary" %>
+  <% end %>
+<% end %>
