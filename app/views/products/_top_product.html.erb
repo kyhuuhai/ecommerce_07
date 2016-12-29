@@ -1,0 +1,14 @@
+<% object.each do |product| %>
+  <a href="single-product.html"><%= image_tag product.image %></a>
+  <h2><%= link_to product.name, product %></h2>
+  <div class="product-wid-rating">
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+    <i class="fa fa-star"></i>
+  </div>
+  <div class="product-wid-price">
+    <ins><%= number_to_currency product.price %></ins>
+  </div>
+<% end %>

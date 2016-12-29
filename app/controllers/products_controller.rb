@@ -2,6 +2,8 @@ class ProductsController < ApplicationController
   before_action :load_product
 
   def show
+    @top_new_product = Product.top_new_product.limit Settings.top_new_product
+    @top_order_product = Product.is_ordered.order_number.limit Settings.top_order
   end
 
   private
